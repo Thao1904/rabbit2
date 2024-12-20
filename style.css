@@ -1,0 +1,306 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #222;
+  color: #fff;
+}
+/* Video Container */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Behind content */
+  background-color: #fb127f;
+}
+
+ .video-background::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      filter: blur(10px); /* Adjust blur strength */
+    }
+
+/* Responsive Video */
+.video-background iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* Maintain 16:9 aspect ratio */
+  min-height: 100vh;
+  min-width: 177.78vh;
+  transform: translate(-50%, -50%);
+}
+
+/* Content Over Video */
+.content {
+  z-index: 1;
+  text-align: center;
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+#game-container {
+  position: relative;
+  width: 800px;
+  height: 600px;
+  overflow: hidden; /* Ensures content stays inside container */
+  border-radius: 2%;
+  
+}
+
+#map-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Map is underneath */
+}
+
+#gameCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Canvas is above the map */
+  pointer-events: none; /* Prevents blocking interaction with the map */
+  box-shadow: rgba(160, 255, 125, 0.35) 0px 5px 25px;
+}
+#charCounter{
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+#overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  z-index: 2; /* Overlay is above all */
+}
+
+.hidden {
+  display: none;                /* Keeps modal hidden until needed */
+}
+
+.menu{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  z-index: 3; /* Menus are above everything */
+}
+
+.menu button, .modal button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Modal Container */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 25%;
+  background-color: #2c3e3d; /* Dark green background */
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  overflow: visible; /* Allows image overflow */
+}
+
+/* Timer on Top-Right */
+.modal-timer {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #fb127f;
+  color: white;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Overflow on Top */
+.modal-overflow-image {
+  position: absolute;
+  top: -60px; /* Pushes the image upward */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: auto;
+  z-index: 1; /* On top of modal content */
+}
+
+.modal-overflow-image1 {
+  position: absolute;
+  top: 8rem; /* Pushes the image upward */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: auto;
+  z-index: 2; 
+}
+
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  /* background-color: #2c3e3d; */
+  border-radius: 10px;
+  padding: 80px 20px 30px; /* Space for image and content */
+  overflow: hidden;
+  color: white;
+}
+
+/* Buttons Container */
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between buttons */
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  background-color: #008080; /* Teal background */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-buttons button:hover {
+  background-color: #005f5f;
+}
+
+#storyText {
+  font-size: 15px;
+}
+#stayButton{
+
+}
+
+button {
+  padding: 10px 20px;
+  background: #04897E ;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 5px;
+}
+
+button:hover {
+  background:rgb(22, 171, 158) ;
+}
+
+.modal-content img {
+  width: 100px;
+  height: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+#timer {
+  background-color: #fb127f;        /* Background color */
+  color: #ffcc00;                  /* Text color */
+  border-radius: 25px;           /* Rounded corners */
+  padding: 8px 15px;             /* Space inside the box */
+  font-size: 24px;               /* Font size */
+  font-weight: bold;             /* Bold text */
+  display: inline-block;         /* Ensure it wraps around content */
+  /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); Optional: shadow for style */
+  text-align: center;            /* Center align the text */
+}
+
+
+.timer-number {
+  font-size: 32px; /* Larger size for the numbers */
+  font-weight: bold; /* Makes it stand out */
+  display: block; /* Places it on its own line */
+  color: #ffcc00; /* Optional: adds a highlight color */
+}
+
+
+.expanded_sticker{
+  position: absolute;
+  top: 0.5rem; /* Pushes the image upward */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: auto;
+  z-index: 2; 
+}
+
+.leave_expand{
+  position: absolute;
+  top: 39rem; /* Pushes the image upward */
+  left: 50%;
+  transform: translateX(-50%);
+  /* width: 800px; */
+  height: auto;
+  z-index: 2; 
+}
+
+#arrowContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allow interactions with map and canvas */
+}
+
+.arrow {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url('arrow.png') no-repeat center; /* Replace with your arrow image */
+  background-size: contain;
+  transform-origin: center;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 12px;
+  line-height: 50px;
+  pointer-events: none;
+}

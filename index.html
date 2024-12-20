@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Knewave&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Phudu:wght@300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="video-background">
+        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/e0qalbmoly0?si=rxt9KYgIZD-m7meR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+      </div>
+    
+    <!-- Game Container -->
+    <div id="game-container">
+        <!-- Mapbox Map -->
+        <div id="map-container"></div>
+        <!-- Canvas Layer -->
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <!-- Overlay Information -->
+        <div id="overlay">
+            <span id="timer"> 2:00<br> 
+                <!-- <span class="timer-number">0:10</span> -->
+              </span>
+              
+            <span id="charCounter">7 STOPS LEFT</span>
+            <!-- <span >STOPS LEFT</span> -->
+        </div>
+    </div>
+    <div id="arrowContainer"></div>
+
+    <!-- Start Menu -->
+    <div id="startMenu" class="menu">
+        <h1>Kuku's Daily Route</h1>
+        <p>Kuku's day is packed. Can you help her get through it?
+           <BR> Help Kuku get to each location in her daily routine within the given time.
+             <BR> Make sure she doesn't miss any stops
+                <BR>time is ticking!</p>
+        
+        <button id="startGame">START DAY</button>
+        <button id="exitGame">EXIT</button>
+    </div>
+
+    <!-- End Menu -->
+    <div id="endMenu" class="menu hidden">
+        <h1>End of Kuku's Day</h1>
+        <p id="endMessage"> </p>
+        <p>Wanna go around and see the locals?</p>
+        <button id="continueExplore">TIME STOP MAGIC ✨ </button>
+        <button id="playAgain">ANOTHER DAY</button>
+       
+    </div>
+
+    
+<!-- Story Modal -->
+
+<div id="storyModal" class="modal hidden">
+    <div class="modal-content">
+        <div class="modal-timer"> <!-- Timer on top-right -->
+            <span id="timer1"></span>
+        </div>
+        <!-- <img id="storyImage" src="/Rabbit/Asset/hi/haha.png" alt="Character" class="modal-overflow-image"> -->
+        <h1 id="storyText"></h1>
+        <p id="storyDescription">
+        </p>
+        <div class="modal-buttons">
+            <button class="stay" id="stayButton">STAY</button>
+            <button class="leave" id="closeStory">LEAVE</button>
+        </div>
+    </div>
+</div>
+
+<div id="expanded_modal" class="expanded_modal hidden">
+    <img id="mau" src="" class="expanded_sticker">
+    <button class="leave_expand" id="closeExpand">LEAVE</button>
+</div>
+<img id="storyImage" alt="mau" src="Asset/hi/haha.png" alt="Character" class="modal-overflow-image1 hidden">
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
