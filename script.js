@@ -13,7 +13,7 @@ map.scrollZoom.disable();
 map.dragPan.disable();
 // Game State
 let gameRunning = false;
-let timer = 120; // Timer: 2 minutes
+let timer = 240; // Timer: 4 minutes
 let charactersLeft = 0;
 let intervalId;
 
