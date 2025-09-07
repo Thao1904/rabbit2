@@ -13,7 +13,7 @@ map.scrollZoom.disable();
 map.dragPan.disable();
 // Game State
 let gameRunning = false;
-let timer = 240; // Timer: 4 minutes
+let timer = 400; // Timer: 4 minutes
 let charactersLeft = 0;
 let intervalId;
 
@@ -172,7 +172,7 @@ window.addEventListener("keydown", (e) => {
 
 function updateStayButtonOpacity() {
     const stayButton = document.getElementById("stayButton");
-    if (timer < 240) {
+    if (timer < 400) {
         stayButton.style.opacity = "0.3";
     } else {
         stayButton.style.opacity = "1"; // Reset opacity when the timer is not below 120
