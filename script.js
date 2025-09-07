@@ -172,7 +172,7 @@ window.addEventListener("keydown", (e) => {
 
 function updateStayButtonOpacity() {
     const stayButton = document.getElementById("stayButton");
-    if (timer < 120) {
+    if (timer < 240) {
         stayButton.style.opacity = "0.3";
     } else {
         stayButton.style.opacity = "1"; // Reset opacity when the timer is not below 120
