@@ -2,7 +2,7 @@ const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
 // Mapbox Initialization
-mapboxgl.accessToken = "pk.eyJ1IjoieXl5OGV0IiwiYSI6ImNsdDZmaGp2eDBhcDUyanM2MDU1YW1teGMifQ.fdTufGQ9FhiL8ktuodouow";
+mapboxgl.accessToken = "pk.eyJ1Ijoia3VrdXRyb3MiLCJhIjoiY21mOXVmcWIzMDZnNDJscHZ5NDdyNjNoZiJ9.-0IL0drrDKV0v4Ss7OVgnw";
 const map = new mapboxgl.Map({
     container: "map-container",
     style: "mapbox://styles/mapbox/streets-v11",
