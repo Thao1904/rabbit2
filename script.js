@@ -141,7 +141,7 @@ function updateTimer() {
 // Start Game
 function startGame() {
     gameRunning = true;
-    timer = 45;
+    timer = 120;
     charactersLeft = sideCharacters.length;
     intervalId = setInterval(updateTimer, 1000);
     gameLoop();
@@ -173,7 +173,7 @@ window.addEventListener("keydown", (e) => {
 function updateStayButtonOpacity() {
     const stayButton = document.getElementById("stayButton");
     if (timer < 400) {
-        stayButton.style.opacity = "0.3";
+        stayButton.style.opacity = "0.8";
     } else {
         stayButton.style.opacity = "1"; // Reset opacity when the timer is not below 120
     }
