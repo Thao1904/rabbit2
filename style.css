@@ -289,8 +289,20 @@ button:hover {
   height: 100%;
   pointer-events: none; /* Allow interactions with map and canvas */
 }
+#arrowContainer::after {
+    position: absolute;
+    content: '';
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAADhJREFUKFNjtFlz4j8DEYARpIYYxWCFxCiGKySkGEUhPsUYCnEpxqoQm2KcCtEV41WIrJigQphiAH0JGuGElBe4AAAAAElFTkSuQmCC);
+    width: 20px;
+    height: 20px;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    bottom: -24px;
+    transform: rotate(135deg);
+}
 
-.arrow::after {
+.arrow {
   position: absolute;
   width: 50px;
   height: 50px;
